@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>하고싶은말</title>
+	        <link href=".b/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		{% for p in posts %}
+		<h2>{{ p.introduce }}</h2>
+		{% endfor %}
+	</body>
+</html>
+

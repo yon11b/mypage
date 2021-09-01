@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>자기소개</title>
+		<link href=".bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	</head>
+	<body>
+		<h1>자기소개</h1>
+		<hr/>
+		{% for p in posts %}
+		<h2>이름 : {{ p.name }}</h2>
+		<h3>생년월일 : {{ p.birth }}</h3>
+		<h3>닉네임 :  {{ p.nickname  }}</h3>
+		{% endfor %}
+	</body>
+</html>
+
