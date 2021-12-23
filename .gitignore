@@ -1,0 +1,15 @@
+#for db.sqlite3 ignore
+*.sqlite3
+
+#for uwsgi.log ignore
+*.log
+
+#for venv directory ignore
+venv/
+
+#for abc directory ignore
+#it may be venv so I have two virutual(abc,venv)! But,I really use virutaul(venv).
+#So, I must delete virtual(abc), but I'm afraid to delete it.
+#So, I decided not to delete but just ignore to commit.
+abc/
+

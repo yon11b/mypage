@@ -1,7 +1,11 @@
 from django.shortcuts import render
 
-from polls.models import Info
+from .models import Info
 # Create your views here.
+
+def index(request):
+    return render(request,'index.html')
+
 def intro(request): 
     posts=Info.objects.all()
     return render(request,'intro.html',{'posts': posts,})

@@ -1,13 +1,107 @@
+{% load static%}
 <!DOCTYPE html>
 <html>
 	<head>
+        <link rel="stylesheet" type="text/css" href="{%static 'nav.css' %}">
 		<title>하고싶은말</title>
-	        <link href=".b/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <style>
+            li.bar{
+                display: inline-block;/*세로나열을 가로나열로 변경*/
+                font-weight: bold;
+                color:white;
+            }
+            nav ul li{padding:0 190px;}
+            a{
+                text-decoration : none;
+                font-size:15px;
+                color:lightyellow;
+            }
+            ul{
+                text-align:center;
+            }
+            li.circle{
+                list-style:circle;
+            }
+            body{
+                background-image:linear-gradient(#b1dfbb,#FFF);
+                background-repeat: no-repeat;
+            }
+
+            #content1 {
+                float: left;
+                width: 50%;
+                background:antiquewhite;
+            }
+            #content2{
+                float: right;
+                width: 50%;
+                background:#ffeeba;
+            }
+        </style>
 	</head>
 	<body>
-		{% for p in posts %}
-		<h2>{{ p.introduce }}</h2>
-		{% endfor %}
+        <nav>
+            <ul>
+                <li class="bar"><a href="../">처음으로</a></li>
+                <li class="bar"style="font-size:30px;">yon11's</li>
+                <li class="bar"><a href="../whoami">이전페이지</a></li>
+            </ul>
+
+        </nav>
+        <div id="content1">
+            <h2 style="text-align: center">이런 걸 공부했습니다!</h2>
+
+            <li style="margin-left: 10px;">SECURITY
+            <ol>
+                <li class="circle">Buffer Over Flow</li>
+                <li class="circle">Stack Over Flow</li>
+                <li class="circle">XSS injection</li>
+                <li class="circle">CSRF injection</li>
+                <li class="circle">SQL injection</li>
+                <li class="circle">Command injection</li>
+            </ol>
+            </li>
+
+            <li style="margin-left: 10px;">NETWORK
+            <ol>
+                <li class="circle">OS 7 layer</li>
+                <li class="circle">nginx</li>
+                <li class="circle">uwsgi</li>
+                <li class="circle">port-forwarding</li>
+            </ol>
+            </li>
+
+            <li style="margin-left: 10px;">FRAMEWORK
+            <ol>
+                <li class="circle">Django</li>
+            </ol>
+            </li>
+
+            <li style="margin-left: 10px;">OS
+            <ol>
+                <li class="circle">Window</li>
+                <li class="circle">Linux(Ubuntu)</li>
+            </ol>
+            </li>
+        </div>
+        <div id="content2">
+            <h2 style="text-align: center">이런 것에 관심있습니다!</h2>
+            <li style="margin-left: 10px;">웹 개발(Front-end&Back-end)</li>
+            <ol>
+                <li class="circle">Django</li>
+                <li class="circle">Spring</li>
+                <li class="circle">React</li>
+            </ol>
+            <li style="margin-left: 10px;">웹 해킹</li>
+            <ol>
+                <li class="circle">Dreamhack</li>
+                <li class="circle">LOS</li>
+            </ol>
+            <li style="margin-left: 10px;">네트워크 구조</li>
+            <li style="margin-left: 10px;">Window API</li>
+            <p></p>
+        </div>
+
 	</body>
 </html>
 

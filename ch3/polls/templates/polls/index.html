@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'picture/hello.gif'%}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color:#b1dfbb;
+        }
+
+    h1{text-align:center;}
+    .font-color{
+        color: white;
+    }
+    p {
+        font-size: 50pt;
+      animation-duration: 5s;
+      animation-name: slidein;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: -150%;
+        width: 300%;
+      }
+
+      to {
+        margin-left: -60%;
+        width: 300%
+      }
+    }
+    #btn{
+        margin-top:20%;
+        margin-left:25%;
+        width:50%;
+        display:block;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 class="font-color">
+        <p>WELCOME!!!!</p>
+    </h1>
+
+        <img src="{% static 'picture/hello.gif'%}" style="width:250px; display:block; margin-top: 10%; margin:0 auto;">
+
+    <button type="button" onclick="location.href='/whoami'" class="btn btn-success" id="btn">시작하기</button>
+</body>
+</html>

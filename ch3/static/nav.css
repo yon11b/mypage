@@ -1,0 +1,12 @@
+nav {
+    height: 50px;
+    padding: 1rem;
+    background: #b8daff;
+    text-align:center;
+}
+
+footer{
+    display:flex;
+    font-size:15px;
+    justify-content: center;
+}

@@ -1,18 +1,86 @@
+{% load static%}
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>자기소개</title>
-		<link href=".bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<title>Introduce</title>
+        <link rel="stylesheet" type="text/css" href="{%static 'nav.css' %}">
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <style>
+            .black{background:#000000;}
+            .green{background: #34ce57;}
+            .red{background: #cc3300;}
+            .blue{background: #5897fb;}
+            .skyblue{background: #856404;}
+            .yellow{background: #f5dd5d;}
+            .pink{background: #20c997;}
+            .orange{background: #F6B235;}
+            body{
+                background-image:linear-gradient(#b1dfbb,#FFF);
+                background-repeat: no-repeat;
+            }
+            span{
+                display: block;
+                margin: 10px 0;
+                color: #FFF;
+                font-size: 20px;
+                line-height:1.8em;
+                text-align: center;
+                border-radius:15px;
+            }
+            div{margin:100px 40px;}
 
+            li{
+                display: inline-block;/*세로나열을 가로나열로 변경*/
+                font-weight: bold;
+                color:white;
+            }
+            nav ul li{padding:0 190px;}
+            a.nav{
+                text-decoration : none;
+                font-size:15px;
+                color:lightyellow;
+            }
+            ul{
+                text-align:center;
+            }
+        </style>
 	</head>
 	<body>
-		<h1>자기소개</h1>
-		<hr/>
-		{% for p in posts %}
-		<h2>이름 : {{ p.name }}</h2>
-		<h3>생년월일 : {{ p.birth }}</h3>
-		<h3>닉네임 :  {{ p.nickname  }}</h3>
-		{% endfor %}
+    <nav>
+        <ul>
+            <li><a class="nav" href="../">처음으로</a></li>
+            <li style="font-size:30px;">yon11's</li>
+            <li><a class="nav" href="../happyhackking">다음페이지</a></li>
+        </ul>
+    </nav>
+    <div>
+        <div>
+            <h1>학력</h1>
+            <hr/>
+            <h2>세종대학교 소프트융합대학 지능기전공학부 (2021~현재)</h2>
+        </div>
+        <div>
+            <h1>언어능력</h1>
+            <hr/>
+            <span class="black" data-val="100%">100%</span>
+            <span class="green" data-val="50%">C</span>
+            <span class="blue" data-val="40%">Python</span>
+            <span class="pink" data-val="15%">PHP</span>
+            <span class="skyblue" data-val="35%">HTML</span>
+            <span class="yellow" data-val="30%">CSS</span>
+            <span class="orange" data-val="20%">JS</span>
+            <span class="red" data-val="45%">Mysql</span>
+        </div>
+    </div>
+    <footer>
+        <a href="https://github.com/ha-yeon0729/Coder/blob/main/Second.md" style="color:#b3b7bb">https://github.com/ha-yeon0729/Coder/blob/main/Second.md</a>
+    </footer>
+    <script>
+    d3.selectAll("span")
+        .datum(function(){return this.dataset;})
+        .transition().duration(2000)
+        .style("width",d=>d.val)
+    </script>
 	</body>
 </html>
 
